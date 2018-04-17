@@ -1,0 +1,81 @@
+<?php
+use core\Application;
+use core\util\Session;
+
+$activeUser = Session::getSession('user') ? Session::getSession('user')->getName() : 'Visitante';
+
+
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="core/vendor/foundation-6/css/foundation.css">
+    <link rel="stylesheet" href="core/vendor/foundation-6/css/app.css">
+    <link rel="stylesheet" href="core/vendor/css/master.css">
+
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg==" crossorigin="anonymous">
+
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA==" crossorigin="anonymous"></script>
+
+    <title>
+        <?=core\Application::APP_NAME ?>
+    </title>
+</head>
+
+<body>
+
+    <header class="row">
+        <div class="grid-x grid-margin-x">
+            <div class="cell small-1">
+                <img src="<?= core\Application::APP_ICON ?>" alt="">
+            </div>
+            <div class="cell small-9">
+                <h1>SysMoney 2017</h1>
+            </div>
+            <div class="cell small-2">
+                <h5 class="text-right middle">Usuário ativo: <?= $activeUser?> </h5>
+            </div>
+        </div>
+    </header>
+
+    <nav id="menu-topo" class="menu align-center">
+        <ul class="dropdown menu" data-dropdown-menu>
+            <li><a href="index.php">Início</a></li>
+            <li>
+                <a href="#">Cadastros</a>
+                <ul class="menu">
+                    <li><a href="Request.php?class=CityCtr&method=showView">Cidades</a></li>
+                    <li><a href="Request.php?class=CategoryCtr&method=showView">Categorias</a></li>
+                    <li><a href="#">Contas</a></li>
+                    <li><a href="Request.php?class=UserCtr&method=showView">Usuários</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Consultas</a>
+                <ul class="menu">
+                    <li><a href="Request.php?class=CityCtr&method=showList">Cidades</a></li>
+                    <li><a href="Request.php?class=CategoryCtr&method=showList">Categorias</a></li>
+                    <li><a href="#">Contas</a></li>
+                    <li><a href="Request.php?class=UserCtr&method=showList"">Usuários</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Relatórios</a>
+                <ul class="menu">
+                    <li><a href="Request.php?class=CategoryCtr&method=showViewRpt">Categorias</a></li>
+                    <li><a href="#">Contas</a></li>
+                </ul>
+            </li>
+            <li><a href="Request.php?class=UserCtr&method=doLogout">Sair</a></li>
+        </ul><!-- .dropdown .menu -->
+    </nav><!-- .menu -->
+    
+    <main>
+        <section class="row content">

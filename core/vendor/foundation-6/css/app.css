@@ -1,0 +1,380 @@
+@import url(https://fonts.googleapis.com/css?family=Satisfy|Shadows+Into+Light|Architects+Daughter|Courgette|Jura|Audiowide|Michroma|Contrail+One|Montserrat+Alternates|Prosto+One|Federo|Share+Tech|Fondamento|Cantora+One|Krona+One|Timmana|Nova+Round|Nova+Slim|Nova+Flat|Arya);
+
+body{
+    /*
+    background: url('../../img/background.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    */
+}
+
+/*imagens em miniatura*/
+.thumbnail{        
+    display: inline-block;   
+    /*max-width: 100%; */
+    margin-bottom: 1rem;
+    /*margin-left: 1rem; */
+    box-shadow: none;
+    width: 9rem;
+    
+    
+}
+.thumbnail:hover, .thumbnail:focus {
+    box-shadow: none;
+}
+
+.my-top-menu{    
+    position: fixed; 
+    width: 100%; 
+    background-color: rgba(192,192,192,0.98); 
+    z-index: 999;
+    box-shadow: 0px 3px 2px #999999;
+    
+
+}
+
+.my-top-menu ul{
+    margin: 0 auto;
+    width: 80%;    
+}
+
+.my-top-menu li:hover{
+    background-color: #DCDCDC;
+}
+
+.my-top-menu a{
+    font-size: 1em;
+}
+
+hr{
+    border: none;
+    border-bottom: dashed 0.17rem #f4f4f4;
+
+}
+
+.menu .menu li a:hover{
+    background-color: #f4f4f4;
+}
+
+
+.sub-border{
+    /*border-bottom: 0.2rem #064385 solid;*/
+    box-shadow: 2px 2px 2px #999;
+}
+
+
+
+.palestras-container h1, h2, p, a{
+    font-family: 'Arya', sans-serif;
+}
+
+.transparent{
+    background-color: rgba(222,222,222,0.5);
+}
+
+.minicurso{
+    min-height: 18rem;
+    max-height: 18rem;
+    position: relative;    
+    width: 100%;
+    margin: 0.7rem 0;
+}
+
+
+/*títulos do minicurso*/
+.minicurso h1{
+    font-size: 1.1rem;    
+}
+
+.minicurso p{
+    font-size: 0.9rem;
+    line-height: 0.5rem;
+    margin: 1rem 1rem;
+}
+
+.minicurso p, h1{
+    font-family: "Jura", sans-serif;
+}
+
+.minicurso header{
+    background-color: #fff;
+    width: 100%;
+}
+
+/* logotipo*/
+.logo{
+    width: 30%;
+    margin: 0.5rem auto 0.5rem auto;
+}
+
+/*ícone do minicurso*/
+.logo .thumbnail {
+    width: 6rem;    
+}
+
+.rodape{
+    background-color: #444;
+    min-height: 20rem;
+}
+
+.rodape p, h1, h2, h3, li, a{
+    font-family: "Jura", sans-serif;
+}
+.rodape .menu li {
+    margin-top: -1rem;
+}
+
+.rodape li > a{
+    color: #FFF;    
+}
+
+.rodape li > a:hover{
+    text-decoration: underline;
+}
+
+/*flip css -------------------------------------*/
+.card {    
+    position: relative;
+    float: left;
+    padding-bottom: 25%;
+    /*width: 25%;*/
+    text-align: center;
+}
+
+.card__front,
+.card__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0.1rem 0.1rem 0.2rem #999999;
+    /*background-color: #f4f4f4;*/
+    /*border-radius: 0.5rem;*/
+    /*    border: solid thin #f2f2f2;*/
+    border: thin solid #cccccc;
+
+
+}
+
+.card__front,
+.card__back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    min-height: 18rem;
+    max-height: 18rem;    
+}
+
+.card__front {
+    background-color: #f2f2f2;
+    overflow:hidden;
+
+}
+
+.card__front p{
+    line-height: 1rem;
+    font-size: 0.8rem;
+    color: #064385;
+
+}
+
+.card__back {
+    background-color: #999;
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    overflow-y: auto;
+    display: table;
+    width: 100%;
+    max-height: 18rem;
+    overflow: auto;
+}
+
+.card__back p{
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 1.1rem;
+    font-size: 1rem;
+    color: #FFF;
+    text-indent: 2rem;
+    text-align: justify;
+    padding: 1rem 1rem;
+    font-family: 'Architects Daughter', cursive;
+    border: thick solid #FFF;
+
+
+}
+.card.effect__hover:hover .card__front {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.card.effect__hover:hover .card__back {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+}
+
+.card.effect__click.flipped .card__front {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+}
+
+.card.effect__click.flipped .card__back {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+}
+
+/* -------------------------------------------*/
+
+
+
+.image-wrapper {
+    width: 100%;
+    height: 100%;
+
+    /*border: 1px solid rgba(0, 0, 0, 0.04); */
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+
+}
+
+.image-overlay-content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0; }
+
+.overlay-fade-in p {
+    letter-spacing: 0.15em;
+    color: #f4f4f4;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: all 0.2s linear; }
+.overlay-fade-in img {
+    transition: all 0.2s linear; }
+.overlay-fade-in .image-overlay-content {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-in-out; }
+.overlay-fade-in h2 {
+    color: #f2f2f2;
+    font-size: 1.4rem;
+    margin-top: 40%;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    background: rgba(0, 0, 0, 0.7); }
+.overlay-fade-in .button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: #FFF;
+    color: #222;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px #000;
+    position: relative;
+    border: 1px solid #999;
+    opacity: 0;
+    transition: all 0.2s ease-in-out; }
+.overlay-fade-in .button:hover {
+    box-shadow: 0 0 5px #000; }
+.overlay-fade-in:hover img {
+    transform: scale(1.2); }
+.overlay-fade-in:hover .image-overlay-content {
+    opacity: 1; }
+.overlay-fade-in:hover h2, .overlay-fade-in p, .overlay-fade-in .button {
+    opacity: 1; }
+.overlay-fade-in:hover p {
+    transition-delay: 0.1s; }
+.overlay-fade-in:hover .button {
+    transition-delay: 0.2s; }
+
+.overlay-slide-in-left img {
+    transition: all 0.3s ease-in-out; }
+.overlay-slide-in-left .image-overlay-content {
+    background-image: url(http://www.awwwards.com/awards/images/2015/04/pattern.jpg);
+    background-color: rgba(0, 0, 0, 0.3);
+    transform: translateX(-110%);
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 0 7px #ccc; }
+.overlay-slide-in-left h2 {
+    font-size: 1.8rem;
+    background: rgba(255, 255, 255, 0.7);
+    margin-top: 40%;
+    color: #000;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1); }
+.overlay-slide-in-left p {
+    opacity: 0;
+    color: #333;
+    transition: all 0.2s linear; }
+.overlay-slide-in-left .button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    box-shadow: 0 0 1px #000;
+    position: relative;
+    border-radius: 7px; }
+.overlay-slide-in-left .button:hover {
+    background-color: #444; }
+.overlay-slide-in-left:hover .image-overlay-content {
+    transform: translateX(0px); }
+.overlay-slide-in-left:hover img {
+    transform: translateX(80%);
+    transition-delay: 0.1s; }
+.overlay-slide-in-left:hover p {
+    opacity: 1;
+    transition-delay: 0.4s; }
+
+.overlay-fade-in-new-background .button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0 0 1px #000;
+    position: relative;
+    opacity: 0;
+    transition: all 0.2s ease-in-out; }
+.overlay-fade-in-new-background .button:hover {
+    box-shadow: 0 0 5px #fff;
+    background-color: #222; }
+.overlay-fade-in-new-background p {
+    font-size: 28px; }
+.overlay-fade-in-new-background .image-overlay-content {
+    opacity: 0;
+    background-image: url(http://subtlepatterns.com/patterns/gplaypattern.png);
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: all 0.4s ease-in-out; }
+.overlay-fade-in-new-background h2 {
+    color: #000;
+    font-size: 1.6rem;
+    margin-top: 30%;
+    opacity: 0;
+    transition: all 0.2s ease-in-out; }
+.overlay-fade-in-new-background p {
+    opacity: 0;
+    transition: all 0.2s linear; }
+.overlay-fade-in-new-background img {
+    transition: all 0.2s ease-in-out; }
+.overlay-fade-in-new-background:hover img {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    filter: gray;
+    -webkit-filter: grayscale(100%);
+    transform: scale(1.5); }
+.overlay-fade-in-new-background:hover .image-overlay-content {
+    opacity: 1; }
+.overlay-fade-in-new-background:hover h2, .overlay-fade-in-new-background p, .overlay-fade-in-new-background .button {
+    opacity: 1; }
+.overlay-fade-in-new-background:hover p {
+    transition-delay: 0.1s; }
+.overlay-fade-in-new-background:hover .button {
+    transition-delay: 0.2s; }
